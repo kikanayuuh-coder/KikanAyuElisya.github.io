@@ -1,0 +1,249 @@
+/* =========================================
+   GLOBAL
+========================================= */
+body {
+  font-family: "Poppins", sans-serif;
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-pink {
+  color: #ff5da2;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.section-light {
+  background-color: #ffffff;
+}
+
+.section-dark {
+  background-color: #1a1a1a;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.custom-navbar {
+  background-color: #1a1a1a;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff5da2;
+}
+
+/* =========================================
+   HERO / HOME
+========================================= */
+.hero-section {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  background-image: linear-gradient(to bottom right, #1a1a1a, #ff5da2);
+  padding-top: 90px;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+}
+
+.subtitle {
+  color: #ffe3f0;
+  font-weight: 500;
+}
+
+.hero-desc {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #f2f2f2;
+}
+
+.btn-pink {
+  background-color: #ff5da2;
+  color: #ffffff;
+  border: 2px solid #ff5da2;
+}
+
+.btn-pink:hover {
+  background-color: #ffffff;
+  color: #ff5da2;
+}
+
+.btn-outline-pink {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-outline-pink:hover {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+/* =========================================
+   ABOUT
+========================================= */
+.about-card {
+  background-color: #ffffff;
+}
+
+.about-text {
+  color: #4a4a4a;
+}
+
+.about-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.about-info:hover {
+  background-color: #ffe3f0;
+}
+
+.about-info i {
+  font-size: 1.5rem;
+  color: #ff5da2;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ff5da2;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   KEMAMPUAN
+========================================= */
+.skill-card {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.skill-card i {
+  font-size: 2.2rem;
+  color: #ff5da2;
+}
+
+.skill-card:hover {
+  background-color: #ff5da2;
+}
+
+.skill-card:hover i {
+  color: #ffffff;
+}
+
+.custom-progress {
+  height: 12px;
+}
+
+.bar-pink {
+  background-color: #ff5da2;
+}
+
+/* =========================================
+   PENDIDIKAN
+========================================= */
+.edu-card i {
+  font-size: 2.5rem;
+  color: #ff5da2;
+}
+
+.edu-card:hover {
+  background-color: #ffe3f0;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+.contact-form {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+}
+
+.custom-input {
+  background-color: #3a3a3a;
+  border: 1px solid #4a4a4a;
+  color: #ffffff;
+}
+
+.custom-input::placeholder {
+  color: #b0b0b0;
+}
+
+.custom-input:focus {
+  background-color: #3a3a3a;
+  color: #ffffff;
+  border-color: #ff5da2;
+}
+
+.contact-info-card {
+  background-color: #ff5da2;
+  border-radius: 10px;
+}
+
+.contact-info-card i {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer-section {
+  background-color: #1a1a1a;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 8px;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+.social-icons a:hover {
+  color: #ff5da2;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 767.98px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .profile-img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+}

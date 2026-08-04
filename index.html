@@ -259,13 +259,13 @@
         <h2 class="section-title text-center mb-5 text-white">Contact<span class="text-pink">.</span></h2>
         <div class="row g-4 align-items-start justify-content-center">
           <div class="col-lg-6">
-            <form name="form_portfolio" id="contactform" class="contact-form p-4 p-md-5">
+            <form name="form_portfolio" id="contactForm" class="contact-form p-4 p-md-5">
               <div class="mb-3">
                 <label for="nama" class="form-label text-white">Nama</label>
                 <input type="text" class="form-control custom-input" id="nama" name="nama" placeholder="Masukkan nama Anda" required />
               </div>
 
-              <div class="mb-3">
+              <div class="mb-s3">
                 <label for="email" class="form-label text-white">Email</label>
                 <input type="email" class="form-control custom-input" id="email" name="email" placeholder="Masukkan email Anda" required />
               </div>
@@ -279,16 +279,11 @@
                 <span class="spinner-border spinner-border-sm me-2" role="status" id="spinnerKirim" style="display: none"></span>
                 <span id="btnKirimText">Kirim</span>
               </button>
-              <button type="submit" class="btn btn-pink btn-primary btn-kirim px-4 py-2" id="btnKirim">
-                <span class="spinner-border spinner-border-sm me-2" role="status" id="spinnerKirim" style="display: none"></span>
-                <span id="btnKirimText">Kirim</span>
-              </button>
 
-              <div class="alert alert-success alert-dismissible fade show mt-3" id="formStatus" style="display:none;" role="alert">
+              <div class="alert alert-success alert-dismissible fade show mt-3" id="formStatus" style="display: none" role="alert">
                 Pesan Anda sudah terkirim!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
-            </form>
             </form>
           </div>
 

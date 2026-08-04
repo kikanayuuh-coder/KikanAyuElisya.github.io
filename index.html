@@ -259,6 +259,11 @@
         <h2 class="section-title text-center mb-5 text-white">Contact<span class="text-pink">.</span></h2>
         <div class="row g-4 align-items-start justify-content-center">
           <div class="col-lg-6">
+            <div class="alert alert-warning alert-dismissible fade show d-none" role="alert">
+              <strong>Terima Kasih</strong> Pesan Anda Sudah Terkirim
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
             <form name="form_portfolio" class="contact-form p-4 p-md-5">
               <div class="mb-3">
                 <label for="nama" class="form-label text-white">Nama</label>
@@ -275,7 +280,12 @@
                 <textarea class="form-control custom-input" id="pesan" name="pesan" rows="4" placeholder="Tulis pesan Anda" required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-pink px-4 py-2">Kirim</button>
+              <button type="submit" class="btn btn-pink btn-primary btn-kirim px-4 py-2">Kirim</button>
+
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </form>
           </div>
 

@@ -259,19 +259,22 @@
         <h2 class="section-title text-center mb-5 text-white">Contact<span class="text-pink">.</span></h2>
         <div class="row g-4 align-items-start justify-content-center">
           <div class="col-lg-6">
-            <form class="contact-form p-4 p-md-5">
+            <form name="form_portfolio" class="contact-form p-4 p-md-5">
               <div class="mb-3">
                 <label for="nama" class="form-label text-white">Nama</label>
-                <input type="text" class="form-control custom-input" id="nama" placeholder="Masukkan nama Anda" required />
+                <input type="text" class="form-control custom-input" id="nama" name="nama" placeholder="Masukkan nama Anda" required />
               </div>
+
               <div class="mb-3">
                 <label for="email" class="form-label text-white">Email</label>
-                <input type="email" class="form-control custom-input" id="email" placeholder="Masukkan email Anda" required />
+                <input type="email" class="form-control custom-input" id="email" name="email" placeholder="Masukkan email Anda" required />
               </div>
+
               <div class="mb-3">
                 <label for="pesan" class="form-label text-white">Pesan</label>
-                <textarea class="form-control custom-input" id="pesan" rows="4" placeholder="Tulis pesan Anda" required></textarea>
+                <textarea class="form-control custom-input" id="pesan" name="pesan" rows="4" placeholder="Tulis pesan Anda" required></textarea>
               </div>
+
               <button type="submit" class="btn btn-pink px-4 py-2">Kirim</button>
             </form>
           </div>
@@ -319,5 +322,18 @@
 
     <!-- Bootstrap 5 JS Bundle CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyy-FOUAgPwrzXlaSgOcOv1P2IMXsD1Nz85w2azHmi3NgIYxMKou-api6AmLV2D5Evg/exec";
+      const form = document.forms["form_portfolio"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => response.json())
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>

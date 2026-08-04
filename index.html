@@ -335,14 +335,40 @@
 
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyy-FOUAgPwrzXlaSgOcOv1P2IMXsD1Nz85w2azHmi3NgIYxMKou-api6AmLV2D5Evg/exec";
+
       const form = document.forms["form_portfolio"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".alert");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+
+        // Tampilkan loading
+        btnKirim.classList.add("d-none");
+        btnLoading.classList.remove("d-none");
+
+        fetch(scriptURL, {
+          method: "POST",
+          body: new FormData(form),
+        })
           .then((response) => response.json())
-          .then((response) => console.log("Success!", response))
-          .catch((error) => console.error("Error!", error.message));
+          .then(() => {
+            // Sembunyikan loading
+            btnLoading.classList.add("d-none");
+            btnKirim.classList.remove("d-none");
+
+            // Tampilkan alert
+            myAlert.classList.remove("d-none");
+
+            // Kosongkan form
+            form.reset();
+          })
+          .catch((error) => {
+            btnLoading.classList.add("d-none");
+            btnKirim.classList.remove("d-none");
+            console.error(error);
+          });
       });
     </script>
   </body>

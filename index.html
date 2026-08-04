@@ -259,11 +259,6 @@
         <h2 class="section-title text-center mb-5 text-white">Contact<span class="text-pink">.</span></h2>
         <div class="row g-4 align-items-start justify-content-center">
           <div class="col-lg-6">
-            <div class="alert alert-warning alert-dismissible fade show d-none" role="alert">
-              <strong>Terima Kasih</strong> Pesan Anda Sudah Terkirim
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-
             <form name="form_portfolio" class="contact-form p-4 p-md-5">
               <div class="mb-3">
                 <label for="nama" class="form-label text-white">Nama</label>
@@ -280,12 +275,20 @@
                 <textarea class="form-control custom-input" id="pesan" name="pesan" rows="4" placeholder="Tulis pesan Anda" required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-pink btn-primary btn-kirim px-4 py-2">Kirim</button>
-
-              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Loading...
+              <button type="submit" class="btn btn-pink btn-primary btn-kirim px-4 py-2" id="btnKirim">
+                <span class="spinner-border spinner-border-sm me-2" role="status" id="spinnerKirim" style="display: none"></span>
+                <span id="btnKirimText">Kirim</span>
               </button>
+              <button type="submit" class="btn btn-pink btn-primary btn-kirim px-4 py-2" id="btnKirim">
+                <span class="spinner-border spinner-border-sm me-2" role="status" id="spinnerKirim" style="display: none"></span>
+                <span id="btnKirimText">Kirim</span>
+              </button>
+
+              <div class="alert alert-success alert-dismissible fade show mt-3" id="formStatus" style="display:none;" role="alert">
+                Pesan Anda sudah terkirim!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </form>
             </form>
           </div>
 
@@ -335,40 +338,14 @@
 
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyy-FOUAgPwrzXlaSgOcOv1P2IMXsD1Nz85w2azHmi3NgIYxMKou-api6AmLV2D5Evg/exec";
-
       const form = document.forms["form_portfolio"];
-      const btnKirim = document.querySelector(".btn-kirim");
-      const btnLoading = document.querySelector(".btn-loading");
-      const myAlert = document.querySelector(".alert");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-
-        // Tampilkan loading
-        btnKirim.classList.add("d-none");
-        btnLoading.classList.remove("d-none");
-
-        fetch(scriptURL, {
-          method: "POST",
-          body: new FormData(form),
-        })
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then((response) => response.json())
-          .then(() => {
-            // Sembunyikan loading
-            btnLoading.classList.add("d-none");
-            btnKirim.classList.remove("d-none");
-
-            // Tampilkan alert
-            myAlert.classList.remove("d-none");
-
-            // Kosongkan form
-            form.reset();
-          })
-          .catch((error) => {
-            btnLoading.classList.add("d-none");
-            btnKirim.classList.remove("d-none");
-            console.error(error);
-          });
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
       });
     </script>
   </body>
